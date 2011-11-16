@@ -1,0 +1,131 @@
+BODY {
+	background-image: url("images/Volunteer-Hands-small.jpg");
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+a:link {
+	color: blue;
+	text-decoration: none;
+}
+a:visited {
+	color: blue;
+	text-decoration: none;
+}
+a:hover {
+	color: red;
+	text-decoration: underline;
+}
+a:active {
+	color: red;
+	text-decoration: underline;
+}
+
+
+.main {
+	top: 20pt;
+	width: 600pt;
+	height: auto;
+	left: 50%;
+	margin-left: -300pt;
+	position: absolute;
+}
+
+.main_title {
+	width: 100%
+	height: auto;
+	border-bottom: 2pt solid black;
+	border-right: 2pt solid black;
+	border-left: 2pt solid gray;
+	border-top: 2pt solid gray;
+	background-image: url("images/table_background.png");
+	font-family: arial, verdana;
+	font-weight: bold;
+	font-size: 24pt;
+	text-align: center;
+	padding: 10pt;
+	-moz-border-radius: 10pt 10pt 0pt 0pt;
+	-webkit-border-radius: 10pt 10pt 0pt 0pt;
+}
+
+.main_cont {
+	margin-top: 5pt;
+	width: 100%
+	height: auto;
+	border-bottom: 2pt solid black;
+	border-right: 2pt solid black;
+	border-left: 2pt solid gray;
+	border-top: 2pt solid gray;
+	background-image: url("images/table_background.png");
+	font-family: arial, verdana;
+	font-size: 12pt;
+	padding: 10pt;
+	line-height: 25pt;
+	border-bottom-right-radius: 10pt 10pt;
+	border-bottom-left-radius: 10pt 10pt;
+	-moz-border-radius: 0pt 0pt 10pt 10pt;
+	-webkit-border-radius: 0pt 0pt 10pt 10pt;
+	overflow: auto;
+}
+
+.cont_header {
+	width: 100%;
+	border-bottom: 1pt dashed black;
+	font-family: arial, verdana;
+	font-weight: bold;
+	font-size: 12pt;
+}
+
+INPUT {
+	border: 1pt black solid;
+}
+TEXTAREA {
+	border: 1pt black solid;
+}
+SELECT {
+	border: 1pt black solid;
+}
+
+.approve_date {
+	width: 10%;
+	height: auto;
+	position: relative;
+	float: left
+}
+
+.approve_description {
+	width: 60%;
+	height: auto;
+	position: relative;
+	float: left;
+}
+
+.approve_confirm {
+	width: 15%;
+	height: auto;
+	position: relative;
+	float: left;
+}
+.approve_review {
+	width: 15%;
+	height: auto;
+	position: relative;
+	float: left;
+}
+
+.approve_container {
+	width: 100%;
+	height: auto;
+}
+.icon {
+	width: 21%;
+	height: 21%;
+	float: left;
+	padding: 11pt;
+}
+.icon_menu {
+	width: 100%;
+	overflow: auto;
+	
+}

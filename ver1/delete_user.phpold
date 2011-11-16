@@ -1,0 +1,57 @@
+<?php
+include 'mysql_settings.php';
+if($action=="delete_user"){
+
+	echo "<center>Below is a list of users in the database. Click on the last name of the user to delete.</center>";
+	$sql = "SELECT l_name,f_name,email FROM person";
+	$result = mysql_query($sql);
+	while ($row = mysql_fetch_array($result))
+		{
+			echo "<a href='$index_file?action=delete_user2&email=" . $row['email'] . "&l_name=" . $row['l_name'] . "&f_name=" . $row['f_name'] . "'>" 
+			. $row['f_name'] . "</a> " . $row['l_name'] 
+			. $row['email'] . "</a><br>";
+			
+			
+		}
+}
+//dislay confirmation message to see if user really wants to delete
+elseif ($action=="delete_user2") {
+	echo "<center>Are you sure that you want to remove " . $_GET['f_name'] . " " . $_GET['l_name'] . " from the database?<br>
+	<form action='$index_file?action=delete_user3' method='post'>
+	<input type='hidden' name='email' value='" . $_GET['email'] ."'>
+	<input type='hidden' name='f_name' value='" . $_GET['f_name'] ."'>
+	<input type='hidden' name='l_name' value='" . $_GET['l_name'] ."'>
+	<input type='submit' value='Remove User'> 
+	</form>
+	<form action='$index_file?action=delete_user' method='post'>
+	<input type='submit' value='Cancel'>
+	</form>
+	</center>
+	";
+}
+//delete user sql statements and display confirmation
+elseif ($action=='delete_user3') {
+	echo "<center>The user " . $_POST['f_name'] . " " . $_POST['l_name'] . " has been deleted from the database.</center>";
+
+	//removing all records of this user
+							//this code is no longer necessary after adding ENGINE=INNODB to sql tables
+							//will remove eventually...	
+/*	//sql query to delete from intersted_in
+	$sql="DELETE FROM interested_in WHERE email='" . $_POST['email'] . "'";
+	if(!mysql_query($sql)) {
+		die('Error: ' . mysql_error());
+	}
+
+	//sql query to delete from volunteer
+	$sql="DELETE FROM volunteer WHERE email='" . $_POST['email'] . "'";
+	if(!mysql_query($sql)) {
+		die('Error: ' . mysql_error());
+	}
+*/
+	//sql query to delete from person
+	$sql="DELETE FROM person WHERE email='" . $_POST['email'] . "'";
+	if(!mysql_query($sql)) {
+		die('Error: ' . mysql_error());
+	}
+}
+?>
